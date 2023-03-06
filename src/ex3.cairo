@@ -1,4 +1,4 @@
-#[derive(Copy, Drop, PartialEq)]
+#[derive(Copy, Drop)]
 struct RGB {
     red: u8,
     green: u8,
