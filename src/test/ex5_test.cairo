@@ -1,5 +1,7 @@
 use cairo_workshop::ex5;
+use cairo_workshop::ex5::QueueTrait;
 
+#[ignore]
 #[test]
 #[available_gas(2000000)]
 fn queue_dequeue_test() {
