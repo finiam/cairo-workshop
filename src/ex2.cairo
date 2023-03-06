@@ -1,14 +1,4 @@
 fn fibonacci(value: felt) -> felt {
-    // TODO remove when the compiler handles this
-    match try_fetch_gas() {
-        Option::Some(_) => {},
-        Option::None(_) => {
-            let mut data = array_new::<felt>();
-            array_append::<felt>(ref data, 'OOG');
-            panic(data);
-        },
-    }
-
     if (value <= 1) {
         return value;
     }
@@ -21,16 +11,6 @@ fn fibonacci_tail_recursive(value: felt) -> felt {
 }
 
 fn fibonacci_internal(value: felt, fib1: felt, fib2: felt) -> felt {
-    // TODO remove when the compiler handles this
-    match try_fetch_gas() {
-        Option::Some(_) => {},
-        Option::None(_) => {
-            let mut data = array_new::<felt>();
-            array_append::<felt>(ref data, 'OOG');
-            panic(data);
-        },
-    }
-
     if (value == 0) {
         return fib1;
     }
@@ -41,10 +21,8 @@ fn fibonacci_internal(value: felt, fib1: felt, fib2: felt) -> felt {
 
     fibonacci_internal(value - 1, fib2, fib1 + fib2)
 }
-// 
+
 // fn main() {
 //   //fibonacci(10)
 //   //fibonacci_tail_recursive(100)
 // }
-
-
