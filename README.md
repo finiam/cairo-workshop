@@ -1,39 +1,33 @@
-<p align="center">
-  <a href="https://github.com/auditless/cairo-template/actions/workflows/test.yaml">
-    <img src="https://github.com/auditless/cairo-template/actions/workflows/test.yaml/badge.svg?event=push" alt="CI Badge"/>
-  </a>
-</p>
+# Cairo 101 Workshop
 
-# Minimal Cairo 1.0 Template  ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/auditless/cairo-template/blob/main/LICENSE)
-
-[Built with **`auditless/cairo-template`**](https://github.com/auditless/cairo-template)
-
-A minimal template for building smart contracts with Cairo 1.0
-using the [Quaireaux](https://github.com/keep-starknet-strange/quaireaux) project defaults.
-
-## How it works
-
-- No submodules, forks or other heavy machinery
-- Uses the [`cairo-test-runner`](https://github.com/starkware-libs/cairo/blob/main/crates/cairo-lang-test-runner/README.md) binary for running tests
-- Built as a [Scarb](https://github.com/software-mansion/scarb) package for reusability and uses Scarb dependencies for libraries
-- Has reproducible builds using GitHub Actions
-- Includes a standard Makefile for commonly used commands
+A minimal template for the Cairo 101 workshop
 
 ## Installing dependencies
 
-### Step 1: Install Cairo 1.0 (guide by [Abdel](https://github.com/abdelhamidbakhta))
+### Step 0: Install Rust
 
-If you are on an x86 Linux system and able to use the release binary,
-you can download Cairo here https://github.com/starkware-libs/cairo/releases.
+Before we begin installing Cairo, we first need to make sure we have Rust installed.
 
-For everyone, else, we recommend compiling Cairo from source like so:
+Run the following command to check if you already have Rust installed:
 
 ```bash
-# Install stable Rust
+cargo --version
+```
+
+If it returns a version number, skip to Step 1. If not, Rust is not present in your system and we need to install it.
+
+We recommend following the instructions for your system, shown in the [official Rust docs](https://www.rust-lang.org/tools/install). After that, rerun the previous command to validate Rust was successfully installed.
+
+### Step 1: Install Cairo 1.0
+
+For Cairo, since the language is still in active developmment, we recommend compiling Cairo from source like so:
+
+```bash
+# Make sure we have the latest stable Rust version
 $ rustup override set stable && rustup update
 
-# Clone the Cairo compiler in $HOME/Bin
-$ cd ~/Bin && git clone git@github.com:starkware-libs/cairo.git && cd cairo
+# Clone the Cairo compiler to the $HOME directory
+$ cd ~ && git clone git@github.com:starkware-libs/cairo.git && cd cairo
 
 # Generate release binaries
 $ cargo build --all --release
@@ -45,24 +39,28 @@ Now that your Cairo compiler is in a cloned repository, all you will need to do
 is pull the latest changes and rebuild as follows:
 
 ```bash
-$ cd ~/Bin/cairo && git fetch && git pull && cargo build --all --release
+$ cd ~/cairo && git fetch && git pull && cargo build --all --release
 ```
 
 ### Step 2: Add Cairo 1.0 executables to your path
 
+Now that we have built the Cairo 1.0 binaries, we need to add them to the PATH environment variable.
+Add the following in your `.bashrc` or `.zshrc`:
+
 ```bash
-export PATH="$HOME/Bin/cairo/target/release:$PATH"
+export PATH="$HOME/cairo/target/release:$PATH"
 ```
+After that, open a new shell and check that the following command returns a version number:
 
-**NOTE: If installing from a Linux binary, adapt the destination path accordingly.**
-
-This will make available several binaries. The one we use is called `cairo-test`.
+```bash
+cairo-compile --version
+```
 
 ### Step 3: Install the Cairo package manager Scarb
 
 Follow the installation guide in [Scarb's Repository](https://github.com/software-mansion/scarb).
 
-### Step 4: Setup Language Server
+### Step 4 (Optional): Setup Language Server
 
 #### VS Code Extension
 
@@ -80,25 +78,13 @@ $ which cairo-language-server | pbcopy
 
 Update the `languageServerPath` of the Cairo 1.0 extension by pasting the path.
 
-## How to use this template
-
-First you will need to clone the repository or click the `Use this template` button
-at the top of the page to create a new repository based on the template.
-
-Next, you will want to update the configuration files with the name of your project:
-
-```
-├── .cairo_project.toml
-└── .Scarb.toml
-```
-
-## Working with your project
+## Commands
 
 The Cairo template currently supports building and testing contracts.
 
 ### Build
 
-Build the contracts.
+Build the project.
 
 ```bash
 $ make build
@@ -120,19 +106,8 @@ Format the Cairo source code (using Scarb):
 $ make fmt
 ```
 
-## Thanks to
-
-- The [Quaireaux](https://github.com/keep-starknet-strange/quaireaux) team for coming up with
-this configuration and especially [Abdel](https://github.com/abdelhamidbakhta) for helping me with Cairo 1.0 installation
-- [Paul Berg](https://github.com/PaulRBerg) and the [foundry-template](https://github.com/paulrberg/foundry-template) project which served as inspiration
-- Last but not least, the StarkWare team for building the first smart contract language that is a joy to use
-
-## Other templates
-
-- [ArgentX template](https://github.com/argentlabs/starknet-build/tree/main/cairo1.0) is built as a fork of the compiler
-- [Eni's cairo1-template](https://github.com/msaug/cairo1-template) uses git submodules for installation
-- [Shramee's Starklings](https://github.com/shramee/starklings-cairo1) use the cairo1 crates as libraries and builds its own framework
-
 ## License
+
+This repo was generated from the [auditless template for Cairo 1](https://github.com/auditless/cairo-template)
 
 [MIT](https://github.com/auditless/cairo-template/blob/main/LICENSE) © [Auditless Limited](https://www.auditless.com)
