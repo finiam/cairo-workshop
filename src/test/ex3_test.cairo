@@ -2,14 +2,17 @@ use cairo_workshop::ex3;
 use cairo_workshop::ex3::RGB;
 use cairo_workshop::ex3::ColorModelTrait;
 
+#[ignore]
 #[test]
 fn test_rgb() {
-    let rgb = ColorModelTrait::<RGB>::favourite_color();
-    let favourite_color = RGB{ red: 1_u8, green: 2_u8, blue: 3_u8 };
+    // TODO: Initialize a variable with your favourite color
+    // let my_favourite_color = RGB { ... };
 
-    assert(rgb == favourite_color, 'error');
+    // TODO: Call the favourite_color function from the ColorModelTrait for the RGB struct
+    //       Remember to add the function to the trait and to implement it
+    //       for both color model structs
+    // let favourite_color = ColorModelTrait::<RGB>::favourite_color();
 
-    // assert(*rgb.red == *favourite_color.red, 'error');
-    // assert(*rgb.green == *favourite_color.green, 'error');
-    // assert(*rgb.blue == *favourite_color.blue, 'error');
+    // TODO: Uncomment the following assert
+    // assert(my_favourite_color == favourite_color, 'not implemented');
 }
