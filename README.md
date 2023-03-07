@@ -58,19 +58,35 @@ cairo-compile --version
 
 ### Step 3: Install the Cairo package manager Scarb
 
-Follow the installation guide in [Scarb's Repository](https://github.com/software-mansion/scarb).
+[Scarb](https://github.com/software-mansion/scarb) is a package manager from Software Mansion for Cairo projects.
+
+The installation process is similar to Cairo:
+
+```bash
+# Make sure we have the latest stable Rust version
+$ rustup override set stable && rustup update
+
+# Clone the Scarb repo to the $HOME directory
+$ cd ~ && git clone git@github.com:software-mansion/scarb && cd scarb
+
+# Generate release binaries
+$ cargo build --all --release
+
+# Add the Scarb binary to PATH
+export PATH="$HOME/scarb/target/release:$PATH"
+```
 
 ### Step 4 (Optional): Setup Language Server
 
 #### VS Code Extension
 
-- Disable previous Cairo 0.x extension
+- Disable previous Cairo 0.x extension if you already had it
 - Install the Cairo 1 extension for proper syntax highlighting and code navigation.
 Just follow the steps indicated [here](https://github.com/starkware-libs/cairo/blob/main/vscode-cairo/README.md).
 
 #### Cairo Language Server
 
-From [Step 1](#step-1-install-cairo-10-guide-by-abdel), the `cairo-language-server` binary should be built and executing this command will copy its path into your clipboard.
+From [Step 1](#step-1), the `cairo-language-server` binary should be built and executing this command will copy its path into your clipboard.
 
 ```bash
 $ which cairo-language-server | pbcopy
