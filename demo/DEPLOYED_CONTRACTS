@@ -1,0 +1,25 @@
+# Deployed contracts
+
+## Starknet Cairo 0.10
+
+- HelloStarknet
+https://testnet.starkscan.co/contract/0x00e4231b43cc7cb164f14140dc84c12afd3ac88f03929361d571f5c4379c29c6
+https://testnet.starkscan.co/tx/0x000c4d82c3de03edefe9a48f02774793c1fda9781689e3cf7b2e3fc4929bd90c
+
+## MessageBridge
+
+### L1
+https://goerli.etherscan.io/address/0x5613c3007f77a5095702f887b7e863cc5b5192a6
+
+### L2
+https://testnet.starkscan.co/contract/0x0795529df4f1655591b2ca4358f1d66a9336ed444e2fdc9eaf0ff182f7784e9c
+
+
+#### Message
+L1->L2 2117406198663544940625280258434420
+
+L2->L1 2117406198663543931826604591117677
+
+#### Selector
+receive_message
+553425568686160303360369235733045232832184867091326150059710842684492237157
