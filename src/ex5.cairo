@@ -24,7 +24,7 @@ impl QueueImpl<T> of QueueTrait::<T> {
     fn new() -> Queue::<T> {
         queue_new()
     }
-    
+
     fn enqueue(ref self: Queue::<T>, value: T) {
         let mut elements = self.elements;
         elements.append(value);

@@ -1,7 +1,6 @@
 use cairo_workshop::ex5;
 use cairo_workshop::ex5::QueueTrait;
 
-#[ignore]
 #[test]
 #[available_gas(2000000)]
 fn queue_dequeue_test() {
@@ -10,5 +9,12 @@ fn queue_dequeue_test() {
     queue.enqueue(2);
     queue.enqueue(3);
 
-    assert(false, 'Test not implemented');
+    match queue.dequeue() {
+      Option::Some(value) => {
+        assert(value == 1, 'wrong value');
+      },
+      Option::None(_) => {
+        assert(false, 'should return value');
+      },
+    }
 }

@@ -1,6 +1,5 @@
 use cairo_workshop::ex1;
 
-#[ignore]
 #[test]
 fn test_var() {
     let expected_value = 42;
@@ -8,7 +7,6 @@ fn test_var() {
     assert(ex1::var() == expected_value, 'not the expected value');
 }
 
-#[ignore]
 #[test]
 fn test_sum() {
     let input = 0;
@@ -17,7 +15,6 @@ fn test_sum() {
     assert(ex1::sum(input) == expected_value, 'not the expected value');
 }
 
-#[ignore]
 #[test]
 fn test_even() {
     let input: u8 = 2_u8;
@@ -25,7 +22,6 @@ fn test_even() {
     assert(ex1::even(input) == true, 'not the expected_value');
 }
 
-#[ignore]
 #[test]
 fn test_odd() {
     let input: u8 = 3_u8;
