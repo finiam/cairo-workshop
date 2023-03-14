@@ -1,34 +1,26 @@
 use cairo_workshop::ex3;
-use cairo_workshop::ex3::RGB;
-use cairo_workshop::ex3::CMYK;
-use cairo_workshop::ex3::ColorModelTrait;
+use cairo_workshop::ex3::Triangle;
+use cairo_workshop::ex3::Circle;
+use cairo_workshop::ex3::Shape;
 
 #[ignore]
 #[test]
-fn test_rgb() {
-    // TODO: Initialize a variable with your favourite color
-    // let my_favourite_color = RGB { ... };
+fn area_triangle_test() {
+  // TODO: Uncomment these lines
 
-    // TODO: Call the favourite_color function from the ColorModelTrait for the RGB struct
-    //       Remember to add the function to the trait and to implement it
-    //       for both color model structs
-    // let favourite_color = ColorModelTrait::<RGB>::favourite_color();
+  //let triangle = Triangle { base: 2_u64, height: 3_u64, b: 3_u64, c: 4_u64 };
 
-    // TODO: Uncomment the following assert
-    // assert(my_favourite_color == favourite_color, 'not implemented');
+  //assert(triangle.area() == 3_u64, 'not valid');
+  //assert(triangle.perimeter() == 9_u64, 'not valid');
 }
 
 #[ignore]
 #[test]
-fn test_colors() {
-  let red = RGB { red: 255_u8, green: 0_u8, blue: 0_u8 };
-  let blue = RGB { red: 0_u8, green: 0_u8, blue: 255_u8 };
-  let green = RGB { red: 0_u8, green: 255_u8, blue: 0_u8 };
+fn area_circle_test() {
+  // TODO: Uncomment these lines
 
-  let magenta = CMYK { cyan: 0_u8, magenta: 100_u8, yellow: 0_u8, black: 0_u8 };
+  //let circle = Circle {radius: 1_u64};
 
-  assert(red.is_red(), 'not red');
-  assert(ColorModelTrait::<RGB>::is_blue(blue), 'not blue');
-  assert((@green).is_green(), 'not green');
-  assert(ColorModelTrait::<CMYK>::is_magenta(@magenta), 'not magenta');
+  // assert(circle.area() == 3_u64, 'not valid');
+  // assert(circle.perimeter() == 6_u64, 'not valid');
 }
