@@ -3,7 +3,7 @@ use array::ArrayTrait;
 fn fibonacci(value: u64) -> u64 {
     // Check if out of gas.
     // TODO Remove when automatically handled by compiler.
-    match gas::get_gas() {
+    match gas::withdraw_gas() {
         Option::Some(_) => {},
         Option::None(_) => {
             let mut data = ArrayTrait::new();
@@ -26,7 +26,7 @@ fn fibonacci_tail_recursive(value: u64) -> u64 {
 fn fibonacci_internal(value: u64, fib1: u64, fib2: u64) -> u64 {
   // Check if out of gas.
   // TODO Remove when automatically handled by compiler.
-  match gas::get_gas() {
+  match gas::withdraw_gas() {
     Option::Some(_) => {},
       Option::None(_) => {
         let mut data = ArrayTrait::new();
