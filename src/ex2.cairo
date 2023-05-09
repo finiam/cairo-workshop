@@ -1,3 +1,3 @@
-fn fibonacci(value: felt) -> felt {
+fn fibonacci(value: felt252) -> felt252 {
   0
 }

@@ -1,8 +1,8 @@
-fn var() -> felt {
+fn var() -> felt252 {
     0
 }
 
-fn sum(value: felt) -> felt {
+fn sum(value: felt252) -> felt252 {
     0
 }
 
