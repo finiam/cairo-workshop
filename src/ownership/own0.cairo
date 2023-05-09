@@ -8,7 +8,7 @@ fn main() {
     arr1.append(4);
 }
 
-fn fill_arr(arr: Array::<felt>) -> Array::<felt> {
+fn fill_arr(arr: Array::<felt252>) -> Array::<felt252> {
     arr.append(1);
     arr.append(2);
     arr.append(3);
